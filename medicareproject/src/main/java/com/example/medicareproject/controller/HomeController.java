@@ -3,6 +3,7 @@ package com.example.medicareproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,10 +64,33 @@ public class HomeController {
 		
 	}
 	
-	@GetMapping("/cart")
-	public Iterable<cart> cartinfo() {
-		Iterable<cart> cart = cr.findAll();
-		return cart;
+	@GetMapping("/deletemedicine/{id}")
+	public void deletemed(@PathVariable("id") int id) {
+		mr.deleteById(id);
+		
 	}
 	
+	@PostMapping("/editmedicines")
+	public void editmed(@RequestBody medicines m) {
+		mr.save(m);
+		
+	}
+	@PostMapping("/addmedicine")
+	public void addmed(@RequestBody medicines m) {
+		mr.save(m);
+		
+	}
+	
+	@GetMapping("/changemedstatus/{id}")
+	public void changestatus(@PathVariable("id") int id) {
+		medicines m=mr.findById(id).get();
+		if(m.getStatus().equals("true"))
+		{
+			m.setStatus("false");
+		}
+		else {
+			m.setStatus("true");
+		}
+		mr.save(m);
+	}
 }

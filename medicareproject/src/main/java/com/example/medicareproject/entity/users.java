@@ -12,7 +12,13 @@ public class users {
 	String email;
 	int age;
 	String password;
-	long phone;
+	String phone;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	@Override
 	public String toString() {
 		return "users [id=" + id + ", name=" + name + ", email=" + email + ", age=" + age + ", password=" + password

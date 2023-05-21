@@ -13,12 +13,18 @@ public class medicines {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String name;
-	String category;
-	String used;
-	int price;
-	Date expirydate;
+	String mrp;
+	String sale;
+	String discamt;
+	String disper;
+	String img;
 	int quantity;
 	String status;
+	@Override
+	public String toString() {
+		return "medicines [id=" + id + ", name=" + name + ", mrp=" + mrp + ", sale=" + sale + ", discamt=" + discamt
+				+ ", disper=" + disper + ", img=" + img + ", quantity=" + quantity + ", status=" + status + "]";
+	}
 	public int getId() {
 		return id;
 	}
@@ -31,29 +37,35 @@ public class medicines {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCategory() {
-		return category;
+	public String getMrp() {
+		return mrp;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setMrp(String mrp) {
+		this.mrp = mrp;
 	}
-	public String getUsed() {
-		return used;
+	public String getSale() {
+		return sale;
 	}
-	public void setUsed(String used) {
-		this.used = used;
+	public void setSale(String sale) {
+		this.sale = sale;
 	}
-	public int getPrice() {
-		return price;
+	public String getDiscamt() {
+		return discamt;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setDiscamt(String discamt) {
+		this.discamt = discamt;
 	}
-	public Date getExpirydate() {
-		return expirydate;
+	public String getDisper() {
+		return disper;
 	}
-	public void setExpirydate(Date expirydate) {
-		this.expirydate = expirydate;
+	public void setDisper(String disper) {
+		this.disper = disper;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -67,11 +79,9 @@ public class medicines {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	@Override
-	public String toString() {
-		return "medicines [id=" + id + ", name=" + name + ", category=" + category + ", used=" + used + ", price="
-				+ price + ", expirydate=" + expirydate + ", quantity=" + quantity + ", status=" + status + "]";
-	}
+	
+	
+	
 
 	
 	
