@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.medicareproject.entity.cart;
 import com.example.medicareproject.entity.medicines;
 import com.example.medicareproject.entity.users;
-import com.example.medicareproject.repository.CartRepository;
 import com.example.medicareproject.repository.MedicinesRepository;
 import com.example.medicareproject.repository.UsersRepository;
 
@@ -42,8 +40,7 @@ public class HomeController {
 	@Autowired
 	UsersRepository ur;
 	
-	@Autowired
-	CartRepository cr;
+	
 	
 	@GetMapping("/medicines")
 	public Iterable<medicines> h(){
